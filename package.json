@@ -1,25 +1,26 @@
 {
-  "name": "gerasimov.pw",
-  "version": "0.1.0",
-  "description": "Personal website",
-  "scripts": {
-    "build": "sh scripts/build.sh",
-    "start": "parcel src/index.html --port 3000 --cache-dir .tmp/parcel-cache --https",
-    "serve": "serve dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EvanJ0hnson/gerasimov.pw.git"
-  },
-  "author": "Ivan Gerasimov <ivangerasimow@gmail.com> (gerasimov.pw)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EvanJ0hnson/gerasimov.pw/issues"
-  },
-  "homepage": "https://github.com/EvanJ0hnson/gerasimov.pw#readme",
-  "devDependencies": {
-    "parcel-bundler": "1.12.3",
-    "sass": "1.37.5",
-    "serve": "12.0.0"
-  }
+	"name": "gerasimov.pw",
+	"version": "0.1.0",
+	"description": "Personal website",
+	"workspaces": [
+		"packages/client",
+		"packages/server"
+	],
+	"scripts": {
+		"build": "npm run build --workspaces",
+		"build:client": "npm run build --workspace=@gerasimov.pw/client",
+		"build:server": "npm run build --workspace=@gerasimov.pw/server",
+		"start:client": "npm run start --workspace=@gerasimov.pw/client",
+		"start:server": "npm run start --workspace=@gerasimov.pw/server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EvanJ0hnson/gerasimov.pw.git"
+	},
+	"author": "Ivan Gerasimov <ivangerasimow@gmail.com> (gerasimov.pw)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/EvanJ0hnson/gerasimov.pw/issues"
+	},
+	"homepage": "https://github.com/EvanJ0hnson/gerasimov.pw#readme"
 }
